@@ -1,0 +1,125 @@
+.select {
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  padding: 4px 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+}
+
+.select:focus {
+  border-color: var(--blue);
+}
+
+.rows {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 110px 1fr 56px;
+  align-items: center;
+  gap: 10px;
+}
+
+.modelInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.modelName {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.modelDesc {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--text-muted);
+}
+
+.barTrack {
+  height: 6px;
+  background: var(--bg-3);
+  border-radius: 3px;
+  position: relative;
+  overflow: hidden;
+}
+
+.barCenter {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background: var(--border);
+}
+
+.barFill {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.4s ease, left 0.4s ease;
+}
+
+.barPos { background: var(--green); }
+.barNeg { background: var(--red); }
+
+.val {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  text-align: right;
+}
+
+.pos { color: var(--green); }
+.neg { color: var(--red); }
+
+.ensemble {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.ensembleLabel {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  flex: 1;
+}
+
+.ensembleVal {
+  font-family: var(--font-mono);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.action {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 3px 7px;
+  border-radius: 4px;
+}
+
+.action_STRONG_BUY { background: var(--green-dim); color: var(--green); border: 1px solid rgba(34,211,160,0.3); }
+.action_BUY { background: var(--green-dim); color: var(--green); }
+.action_HOLD { background: rgba(122,141,166,0.1); color: var(--text-secondary); }
+.action_SELL { background: var(--red-dim); color: var(--red); }
+.action_STRONG_SELL { background: var(--red-dim); color: var(--red); border: 1px solid rgba(240,82,82,0.3); }

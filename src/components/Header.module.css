@@ -1,0 +1,116 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 24px;
+  background: var(--bg-1);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(8px);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.logoMark {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  padding: 4px;
+}
+
+.logoBar {
+  display: block;
+  width: 4px;
+  background: var(--green);
+  border-radius: 2px;
+  animation: barPulse 2s ease-in-out infinite;
+}
+
+.logoBar:nth-child(1) { animation-delay: 0s; }
+.logoBar:nth-child(2) { animation-delay: 0.2s; }
+.logoBar:nth-child(3) { animation-delay: 0.4s; }
+.logoBar:nth-child(4) { animation-delay: 0.6s; }
+.logoBar:nth-child(5) { animation-delay: 0.8s; }
+
+@keyframes barPulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+.title {
+  font-family: var(--font-sans);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.3px;
+  line-height: 1.2;
+}
+
+.subtitle {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  margin-top: 2px;
+}
+
+.statusRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.statusItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.statusLabel {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.statusValue {
+  font-size: 12px;
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-weight: 600;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--green);
+  animation: dotPulse 2s ease-in-out infinite;
+  box-shadow: 0 0 6px var(--green);
+}
+
+@keyframes dotPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.divider {
+  width: 1px;
+  height: 16px;
+  background: var(--border);
+}
+
+@media (max-width: 768px) {
+  .subtitle { display: none; }
+  .statusRow { gap: 10px; }
+}
+
+@media (max-width: 480px) {
+  .header { flex-direction: column; gap: 12px; align-items: flex-start; }
+}
